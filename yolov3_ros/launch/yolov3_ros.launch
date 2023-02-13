@@ -1,0 +1,5 @@
+<launch>
+
+  <node name="yolov3_ros" pkg="yolov3_ros" type="detection.py" output="screen" />
+
+</launch>
