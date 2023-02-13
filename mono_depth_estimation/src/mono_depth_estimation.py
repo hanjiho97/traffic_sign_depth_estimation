@@ -18,13 +18,12 @@ FOV_H = 110 #need to change
 FY = 346.5049
 CY = 204.58251
 
-VISUAL_IMAGE_PATH = '/home/hanjiho97/xycar_ws/src/mono_depth_estimation/src/car_fleid.jpg'
+VISUAL_IMAGE_PATH = '/home/nvidia/xycar_ws/src/mono_depth_estimation/src/car_fleid.jpg'
 
 
 def image_callback(data):
     global calibration_image
     calibration_image = np.frombuffer(data.data, dtype=np.uint8).reshape(data.height, data.width, -1)
-    calibration_image = cv2.cvtColor(calibration_image, cv2.COLOR_RGB2BGR)
 
 
 def bbox_callback(data):
@@ -104,7 +103,7 @@ def draw_position(bbox_list, image_path):
 def start_depth_estimation():
     rate = rospy.Rate(10)
     image_sub = rospy.Subscriber('/usb_cam/cailbration_image', Image, image_callback)
-    bbox_sub = rospy.Subscriber('/yolov3_ros/detections', BoundingBoxes, bbox_callback)
+    bbox_sub = rospy.Subscriber('/yolov3_trt_ros/detections', BoundingBoxes, bbox_callback)
     target_pub = rospy.Publisher('depth_estimation/targets', Targets, queue_size=1)
     while not rospy.is_shutdown():
         rate.sleep()

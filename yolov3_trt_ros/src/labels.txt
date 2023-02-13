@@ -1,0 +1,5 @@
+left
+right
+stop
+crosswal
+traffic_light
