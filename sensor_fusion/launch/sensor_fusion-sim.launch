@@ -1,6 +1,7 @@
 <launch>
 
   <node name="mono_depth_estimation" pkg="mono_depth_estimation" type="mono_depth_estimation.py" output="screen" />
+  <node name="lidar_calibration" pkg="lidar_calibration" type="lidar_calibration.py" output="screen" />
   <node name="yolov3_ros" pkg="yolov3_ros" type="detection.py" output="screen" />
   <node name="sensor_fusion" pkg="sensor_fusion" type="sensor_fusion.py" output="screen" />
 

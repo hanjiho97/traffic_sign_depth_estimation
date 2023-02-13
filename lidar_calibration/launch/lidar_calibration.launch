@@ -1,0 +1,5 @@
+<launch>
+
+  <node name="lidar_calibration" pkg="lidar_calibration" type="lidar_calibration.py" output="screen" />
+
+</launch>
