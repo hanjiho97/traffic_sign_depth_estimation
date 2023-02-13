@@ -20,7 +20,6 @@ def target_callback(data):
     for target in data.targets:
         target_detail = [target.id, target.x, target.y]
         targets_list.append(target_detail)
-    print(targets_list)
 
 
 #combine lidar and camera information
