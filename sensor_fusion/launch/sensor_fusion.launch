@@ -11,7 +11,10 @@
     <param name="exposure" value="80" />
     <param name="io_method" value="mmap"/>
   </node>
-
+  
+  <!-- lidar -->
+  <include file="$(find xycar_lidar)/launch/lidar_noviewer.launch" />
+  
   <node name="mono_depth_estimation" pkg="mono_depth_estimation" type="mono_depth_estimation.py" output="screen" />
   <node name="lidar_calibration" pkg="lidar_calibration" type="lidar_calibration.py" output="screen" />
   <node name="yolov3_trt_ros" pkg="yolov3_trt_ros" type="trt_detection.py" output="screen" />
