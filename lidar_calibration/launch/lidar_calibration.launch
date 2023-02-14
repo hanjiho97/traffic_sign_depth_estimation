@@ -1,5 +1,8 @@
 <launch>
 
+  <!-- lidar -->
+  <include file="$(find xycar_lidar)/launch/lidar_noviewer.launch" />
+  
   <node name="lidar_calibration" pkg="lidar_calibration" type="lidar_calibration.py" output="screen" />
 
 </launch>
